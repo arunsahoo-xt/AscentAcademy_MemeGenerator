@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <div class="body">
+
+        <div class="col1">
+    
+            <div class="image-container">
+                <!-- <img class="src-img" -->
+                 <!-- src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Shruti_Haasan_graces_red_carpet_of_Femina_Stylista_West_%2804%29_%28cropped%29.jpg/220px-Shruti_Haasan_graces_red_carpet_of_Femina_Stylista_West_%2804%29_%28cropped%29.jpg" /> -->
+                 <img id="original-image" src="https://i.pinimg.com/originals/75/84/04/758404ebc522ce0beff7f02e59fdaf47.jpg" style="height: 300px;width: 300px;">
+                 
+                </div>
+                <form class="formSelector">
+                    <!-- cross-origin="anonymous" -->
+                    <input type="file" onChange="preview_2(this);"><br>
+                    <div class="textbox1">
+                        <textarea style="height: 44px;" id="inp-top"></textarea>
+                        <input type="checkbox">
+        
+                    </div>
+                    <div class="textbox2">
+        
+                        <textarea style="height: 44px;" id="inp-bot"></textarea>
+                        <input type="checkbox">
+                    </div>
+              <button type="submit">Save</button>
+            </form>
+        </div>
+        <div class="col2">
+    
+            <div class="wrapper">
+                <div 
+                class="drag-box drag-top off"
+                style="width: 100%; height: fit-content;"
+                tabindex="0">
+                </div>
+                <canvas id="canvas" ></canvas>
+                <div 
+                class="drag-box drag-bot off"
+                style="width: 100%; height: fit-content;"
+                tabindex="0">
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

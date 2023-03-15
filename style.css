@@ -1,0 +1,82 @@
+.body{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.src-img{
+  height: 450px;
+  width: 400px;
+  object-fit: contain;
+  position: absolute;
+  top: 10%;
+  bottom: 15%;
+}
+.image-container{
+    width: 300px;
+    height: 300px;
+    border: 3px solid black;
+    background-color: rgb(251, 255, 255);
+    
+}
+canvas{
+  background-color: rgb(250, 250, 250);
+}
+#inp-top,#inp-bot{
+  display: block;
+  width: 300px;
+  border-width: 2px;
+  border-style: solid;
+  resize: none;
+}
+/* h1 { font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", "sans serif"; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; } h3 { font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", "sans serif"; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } p { font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", "sans serif"; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } blockquote { font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", "sans serif"; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } pre { font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", "sans serif"; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px; } */
+
+.wrapper{
+    width: 300px;
+    height: auto;
+    /* border: 3px solid black; */
+    background-color: rgb(244, 251, 251);
+}
+
+.wrapper .drag-box {
+  /* position: relative;
+  top: 0;
+  left: 0; */
+ 
+  cursor: move;
+  border: 1px solid #444;
+  border: 1px solid rgba(0,0,0,.6);
+  /* background: transparent; */
+  background-color: #000;
+  touch-action: none;
+   z-index: 0;
+
+  font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal,sans-serif;
+  color: white;
+  font-size: 20px;
+  font-weight: 200;
+  word-wrap: break-word;
+  text-align: center;
+  
+}
+
+.wrapper .drag-box.drag-top {
+  z-index: 0;
+  border-color: #000;
+  
+
+}
+.inp-top,.inp.bot{
+width: 100px;
+height: 20px;
+}
+.textbox1,.textbox2{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.textbox1 input,.textbox2 input{
+ height: 30px;
+ width: 30px;
+}
+
