@@ -45,14 +45,14 @@ $(document).on('input','#inp-top',function(){
     // //refill text
     // ctx.fillStyle = "black";
     // ctx.fillText($(this).val(),50,50);
-	var top_inp=document.querySelector(".drag-top");
+	var top_inp=document.querySelector(".top-h4");
 	top_inp.innerHTML=$(this).val();
 });
 $(document).on('input','#inp-bot',function(){
     // //redraw image
     // ctx.clearRect(0,0,canvas.width,canvas.height);
     // ctx.drawImage(image_ele, 0, 0,image_ele.width,image_ele.height);
-	var bot_inp=document.querySelector(".drag-bot");
+	var bot_inp=document.querySelector(".bot-h4");
 	bot_inp.innerHTML=$(this).val();
 });
 
@@ -62,9 +62,7 @@ $(document).on('input','#inp-bot',function(){
 //**************code to download meme********************
 
 $('button').click(function(event){
-	// console.log(ctx.getImageData(50, 50, 100, 100));
 	event.preventDefault();
-	console.log(document.getElementById(outImage));
 	printToFile();
 });
 
@@ -101,14 +99,16 @@ function downloadURI(uri, name) {
 // 	copy_image.src=image.src;
 //   });
 
+
 function preview_1(obj){
 	console.log(obj);
 	var copy_image=document.querySelector(".copy-image");
+	
 	var image=new Image();
-	image.crossOrigin = "Anonymous";
 	image.src=obj.src;
 		image.onload = function () {
 			image_ele.src=image.src;
+			
 			copy_image.src=image.src;
 		};
 }
@@ -125,7 +125,99 @@ function preview_2(obj)
 		image.onload = function () {
 			image_ele.src=image.src;
 			copy_image.src=image.src;
+			
 		};
-		}
 	}
 }
+}
+
+$( function() {
+	$(".top-h4").draggable({
+		containment:".wrapper"
+	});
+  } );
+$( function() {
+	$( ".bot-h4" ).draggable({
+		containment:".wrapper"
+	});
+	
+  } );
+
+// var draggable=document.querySelector(".drag-box");
+// let isResizing=false;
+// // var draggable=document.querySelector(".drag-box");
+// draggable.addEventListener("mousedown",mousedown);
+
+// function mousedown(e){
+// 	if(!isResizing){
+// 		window.addEventListener("mousemove",mousemove);
+// 		window.addEventListener("mouseup",mouseup);
+// 		let prevX=e.clientX;
+// 		let prevY=e.clientY;
+		
+// 		function mousemove(e){
+// 			let newX=prevX-e.clientX;
+// 			let newY=prevY-e.clientY;
+	
+// 			const rect=draggable.getBoundingClientRect();
+// 			draggable.style.left=rect.left-newX+"px";
+// 			draggable.style.top=rect.top-newY+"px";
+	
+// 			prevX=e.client;
+// 			prevY=e.clientY;
+	
+// 		}
+// 		function mouseup(){
+// 			window.removeEventListener("mousemove",mousemove);
+// 			window.removeEventListener("mouseup",mouseup);
+// 		}
+// 	}
+// }
+
+
+// const resizers=document.querySelectorAll(".resizer");
+// let currentResizer;
+// for(let resizer of resizers){
+// 	console.log("resizer");
+// 	resizer.addEventListener("mousedown",mousedown);
+// 	function mousedown(e){
+// 		isResizing=true;
+// 		currentResizer=e.target;
+// 		let prevX=e.clientX;
+// 		let prevY=e.clientY;
+// 		console.log("insisde 1");
+// 		window.addEventListener("mousemove",mousemove);
+// 		window.addEventListener("mouseup",mouseup);
+// 		function mousemove(){
+// 			console.log("inside 2");
+// 			const rect=resizer.getBoundingClientRect();
+// 			if(currentResizer.classList.contains('se')){
+// 				resizer.style.width=rect.width-(prevX-e.clientX)+"px";
+// 				resizer.style.height=rect.height-(prevY-e.clientY)+"px";	
+// 			}
+// 			else if(currentResizer.classList.contains('sw')){
+// 				resizer.style.width=rect.width+(prevX-e.clientX)+"px";
+// 				resizer.style.height=rect.height-(prevY-e.clientY)+"px";
+// 				resizer.style.left=rect.left-(prevX-e.clientX)+"px";	
+// 			}
+// 			else if(currentResizer.classList.contains('ne')){
+// 			resizer.style.width=rect.width-(prevX-e.clientX)+"px";
+// 			resizer.style.height=rect.height+(prevY-e.clientY)+"px";
+// 			resizer.style.top=rect.top-(prevY-e.clientY)+"px";	
+// 		}
+// 		else if(currentResizer.classList.contains('nw')){
+// 			resizer.style.width=rect.width+(prevX-e.clientX)+"px";
+// 			resizer.style.height=rect.height+(prevY-e.clientY)+"px";
+// 			resizer.style.left=rect.left-(prevX-e.clientX)+"px";
+// 			resizer.style.top=rect.top-(prevY-e.clientY)+"px";		
+// 		}
+// 		prevX=e.clientX;
+// 		prevY=e.clientY;
+// 	}
+// 	function mouseup(){
+// 		window.removeEventListener("mousemove",mousemove);
+// 		window.removeEventListener("mouseup",mouseup);
+// 		isResizing=false;
+// 	}
+// }
+// }
